@@ -8,7 +8,21 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<h1>Zipcode Finder</h1>
+	<form id="form">
+		<label for="zipcode">Enter your Zip code</label>
+		<div>
+			<input id="zipcode" type="text" name="zipcode" value="90210" placeholder="Ex: 90210"/>
+			<button id="submit-btn">Submit</button>
+		</div>
+	</form>
+	<div id="geography">
+		<div id="states"></div>
+	</div>
+	<div id="zipcode-info">
+		<span class="muted">Type in a zipcode to get information about it</span>
+	</div>
+	<script src="svg.js"></script>
 	<script src="script.js"></script>
 </body>
 </html>

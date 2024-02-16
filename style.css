@@ -1,0 +1,487 @@
+body {
+  background-color: #ddd;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  height: calc(100vh - 1em - 150px);
+  padding: 1em;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+h3 {
+  font-size: 1.1em;
+  margin-bottom: 0.3em;
+}
+
+#form {
+  margin-bottom: 0.3em;
+}
+
+input[type=text] {
+  border: 1px solid #222;
+  border-radius: 8px;
+  height: 24px;
+  line-height: 12px;
+}
+
+button {
+  background-color: rebeccapurple;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 500;
+  height: 31px;
+  line-height: 12px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 8px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+button:hover,button:focus {
+  background-color: rgb(146, 73, 220);
+}
+button:active {
+  background-color: rgb(45, 21, 69);
+}
+button:disabled {
+  background-color: gray;
+  cursor: initial;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #F082AC;
+}
+
+#zipcode-info {
+  background-color: #fff;
+  border: 1px solid #222;
+  border-radius: 8px;
+  display: inline-block;
+  height: 200px;
+  padding: 10px;
+  vertical-align: top;
+  width: 50%;
+}
+
+.muted {
+  color: #aaa;
+}
+
+#geography {
+  display: inline-block;
+  height: 328px;
+  overflow: hidden;
+  position: relative;
+  width: 45%;
+}
+
+#geography .country svg {
+  fill: white;
+  height: 100%;
+  width: 500px;
+}
+
+#states {
+  width: 462px;
+  height: 442px;
+  position: absolute;
+  left: 18px;
+}
+
+#geography .state svg {
+  fill: white;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 80px;
+  transition: all 0.5s ease;
+  width: 50px;
+  z-index: 2;
+}
+
+#geography .state[data-active] svg {
+  fill: red;
+}
+
+#geography .state[data-svg='AK'] svg {
+  top: 33px;
+  left: 0;
+  transform: rotate(-8deg);
+  width: 71px;
+}
+
+#geography .state[data-svg='AL'] svg {
+  top: 0px;
+  left: 304px;
+  transform: rotate(-8deg);
+  width: 39px;
+}
+
+#geography .state[data-svg='AR'] svg {
+  top: -11px;
+  left: 251px;
+  transform: rotate(-3deg);
+  width: 36px;
+}
+
+#geography .state[data-svg='AZ'] svg {
+  top: -15px;
+  left: 67px;
+  transform: rotate(4deg);
+  width: 61px;
+}
+
+#geography .state[data-svg='CA'] svg {
+  top: -51px;
+  left: -12px;
+  transform: rotate(11deg);
+  width: 99px;
+}
+
+#geography .state[data-svg='CO'] svg {
+  top: -68px;
+  left: 121px;
+  transform: rotate(2deg);
+  width: 55px;
+}
+
+#geography .state[data-svg='CT'] svg {
+  top: -120px;
+  left: 414px;
+  transform: rotate(-11deg);
+  width: 20px;
+}
+
+#geography .state[data-svg='DC'] svg {
+  top: -88px;
+  left: 383px;
+  transform: rotate(-10deg);
+  width: 8px;
+  z-index: 3;
+}
+
+#geography .state[data-svg='DE'] svg {
+  top: -89px;
+  left: 404px;
+  transform: rotate(-9deg);
+  width: 9px;
+}
+
+#geography .state[data-svg='FL'] svg {
+  top: 50px;
+  left: 319px;
+  transform: rotate(-11deg);
+  width: 80px;
+}
+
+#geography .state[data-svg='GA'] svg {
+  top: -6px;
+  left: 331px;
+  transform: rotate(-10deg);
+  width: 48px;
+}
+
+#geography .state[data-svg='HI'] svg {
+  top: 78px;
+  left: 42px;
+  transform: rotate(-4deg);
+  width: 59px;
+}
+
+#geography .state[data-svg='IA'] svg {
+  top: -79px;
+  left: 224px;
+  transform: rotate(-4deg);
+  width: 59px;
+}
+
+#geography .state[data-svg='ID'] svg {
+  top: -134px;
+  left: 61px;
+  transform: rotate(6deg);
+  width: 55px;
+}
+
+#geography .state[data-svg='IL'] svg {
+  top: -56px;
+  left: 267px;
+  transform: rotate(-5deg);
+  width: 48px;
+}
+
+#geography .state[data-svg='IN'] svg {
+  top: -74px;
+  left: 302px;
+  transform: rotate(-8deg);
+  width: 33px;
+}
+
+#geography .state[data-svg='KS'] svg {
+  top: -56px;
+  left: 172px;
+  transform: rotate(-1deg);
+  width: 77px;
+}
+
+#geography .state[data-svg='KY'] svg {
+  top: -56px;
+  left: 302px;
+  transform: rotate(-9deg);
+  width: 57px;
+}
+
+#geography .state[data-svg='LA'] svg {
+  top: 21px;
+  left: 258px;
+  transform: rotate(-4deg);
+  width: 51px;
+}
+
+#geography .state[data-svg='MA'] svg {
+  top: -128px;
+  left: 415px;
+  transform: rotate(-11deg);
+  width: 31px;
+}
+
+#geography .state[data-svg='MD'] svg {
+  top: -82px;
+  left: 373px;
+  transform: rotate(-10deg);
+  width: 42px;
+}
+
+#geography .state[data-svg='ME'] svg {
+  top: -160px;
+  left: 424px;
+  transform: rotate(-14deg);
+  width: 38px;
+}
+
+#geography .state[data-svg='MI'] svg {
+  top: -124px;
+  left: 276px;
+  transform: rotate(-6deg);
+  width: 72px;
+}
+
+#geography .state[data-svg='MN'] svg {
+  top: -129px;
+  left: 210px;
+  transform: rotate(-6deg);
+  width: 77px;
+}
+
+#geography .state[data-svg='MO'] svg {
+  top: -44px;
+  left: 237px;
+  transform: rotate(-5deg);
+  width: 55px;
+}
+
+#geography .state[data-svg='MS'] svg {
+  top: 5px;
+  left: 276px;
+  transform: rotate(-6deg);
+  width: 38px;
+}
+
+#geography .state[data-svg='MT'] svg {
+  top: -147px;
+  left: 75px;
+  transform: rotate(4deg);
+  width: 85px;
+}
+
+#geography .state[data-svg='NC'] svg {
+  top: -41px;
+  left: 337.5px;
+  transform: rotate(-11deg);
+  width: 84px;
+}
+
+#geography .state[data-svg='ND'] svg {
+  top: -151px;
+  left: 158px;
+  transform: rotate(2deg);
+  width: 60px;
+}
+
+#geography .state[data-svg='NE'] svg {
+  top: -89px;
+  left: 157px;
+  transform: rotate(0deg);
+  width: 78px;
+}
+
+#geography .state[data-svg='NH'] svg {
+  top: -144px;
+  left: 419px;
+  transform: rotate(-13deg);
+  width: 14px;
+}
+
+#geography .state[data-svg='NJ'] svg {
+  top: -99px;
+  left: 404px;
+  transform: rotate(-10deg);
+  width: 16px;
+}
+
+#geography .state[data-svg='NM'] svg {
+  top: -12px;
+  left: 115px;
+  transform: rotate(3deg);
+  width: 68px;
+}
+
+#geography .state[data-svg='NV'] svg {
+  top: -67px;
+  left: 30px;
+  transform: rotate(6deg);
+  width: 58px;
+}
+
+#geography .state[data-svg='NY'] svg {
+  top: -123px;
+  left: 365px;
+  transform: rotate(-11deg);
+  width: 66px;
+}
+
+#geography .state[data-svg='OH'] svg {
+  top: -86px;
+  left: 328px;
+  transform: rotate(-8deg);
+  width: 38px;
+}
+
+#geography .state[data-svg='OK'] svg {
+  top: -21px;
+  left: 177px;
+  transform: rotate(-1deg);
+  width: 78px;
+}
+
+#geography .state[data-svg='OR'] svg {
+  top: -128px;
+  left: 3px;
+  transform: rotate(10deg);
+  width: 70px;
+}
+
+#geography .state[data-svg='PA'] svg {
+  top: -103px;
+  left: 361px;
+  transform: rotate(-8deg);
+  width: 51px;
+}
+
+#geography .state[data-svg='RI'] svg {
+  top: -124px;
+  left: 433px;
+  transform: rotate(-15deg);
+  width: 8px;
+}
+
+#geography .state[data-svg='SC'] svg {
+  top: -20px;
+  left: 350px;
+  transform: rotate(-11deg);
+  width: 47px;
+}
+
+#geography .state[data-svg='SD'] svg {
+  top: -118px;
+  left: 155px;
+  transform: rotate(1deg);
+  width: 65px;
+}
+
+#geography .state[data-svg='TN'] svg {
+  top: -35px;
+  left: 300px;
+  transform: rotate(-9deg);
+  width: 63px;
+}
+
+#geography .state[data-svg='TX'] svg {
+  top: 28px;
+  left: 139px;
+  transform: rotate(1deg);
+  width: 130px;
+}
+
+#geography .state[data-svg='UT'] svg {
+  top: -73px;
+  left: 80px;
+  transform: rotate(4deg);
+  width: 48px;
+}
+
+#geography .state[data-svg='VA'] svg {
+  top: -67px;
+  left: 340px;
+  transform: rotate(-12deg);
+  width: 77px;
+}
+
+#geography .state[data-svg='VT'] svg {
+  top: -143px;
+  left: 412px;
+  transform: rotate(-13deg);
+  width: 16px;
+}
+
+#geography .state[data-svg='WA'] svg {
+  top: -166px;
+  left: 12px;
+  transform: rotate(12deg);
+  width: 63px;
+}
+
+#geography .state[data-svg='WI'] svg {
+  top: -121px;
+  left: 252px;
+  transform: rotate(-6deg);
+  width: 59px;
+}
+
+#geography .state[data-svg='WV'] svg {
+  top: -77px;
+  left: 347.5px;
+  transform: rotate(-10deg);
+  width: 45px;
+}
+
+#geography .state[data-svg='WY'] svg {
+  top: -109px;
+  left: 106px;
+  transform: rotate(1deg);
+  width: 55px;
+}
+
+@media all and (max-width: 1110px) {
+  #zipcode-info {
+    width: 450px;
+  }
+  #geography {
+    display: block;
+    width: 100%;
+  }
+}
